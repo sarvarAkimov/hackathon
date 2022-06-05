@@ -274,6 +274,7 @@
   width: 100%;
   height: 100vh;
 }
+/* dorilar */
 .asos .medicine_kh {
   width: 100%;
   height: auto;
@@ -349,9 +350,6 @@
   justify-content-height: auto;
   justify-content-margin: 0 auto;
 }
-.asos .medicine_kh .medicine_blok_1_kh .item_1_kh .item_1_kh_items img{
-width:150px;
-height:180px;}
 .asos .medicine_kh .medicine_blok_1_kh .item_1_kh .item_1_kh_items h1 {
   font-family: "Inter";
   font-style: normal;
@@ -383,8 +381,7 @@ height:180px;}
           justify-content: center;
 }
 .asos .medicine_kh .medicine_blok_1_kh .item_2_kh .item_2_kh_items img {
-  width: 250px;
-  height:300px;
+  width: 30%;
   margin: 10px auto;
 }
 .asos .medicine_kh .medicine_blok_1_kh .item_2_kh .item_2_kh_items .title {
@@ -436,11 +433,6 @@ height:180px;}
   justify-content-height: auto;
   justify-content-margin: 0 auto;
 }
-.asos .medicine_kh .medicine_blok_1_kh .item_3_kh .item_1_kh_items img {
-    width:150px;
-    height:180px;
-  margin: 10px auto;
-}
 .asos .medicine_kh .medicine_blok_1_kh .item_3_kh .item_1_kh_items h1 {
   font-family: "Inter";
   font-style: normal;
@@ -479,9 +471,7 @@ height:180px;}
           justify-content: center;
 }
 .asos .medicine_kh .medicine_blok_2_kh .medicine_blok_2_kh_items img {
-    width:150px;
-    height:180px;
-    margin: 10px auto;
+  margin: 10px auto;
 }
 .asos .medicine_kh .medicine_blok_2_kh .medicine_blok_2_kh_items h1 {
   padding: 30px;
@@ -493,6 +483,7 @@ height:180px;}
   letter-spacing: 0.05em;
   margin-bottom: 20px;
 }
+/* start footer */
 .asos footer {
   width: 100%;
   height: auto;

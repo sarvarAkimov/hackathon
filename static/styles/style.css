@@ -208,12 +208,12 @@
   margin-top: 30px;
   font-size: 18px;
 }
-.foundation-s .head-container-s header .head-left-s .form {
+.foundation-s .head-container-s header .head-left-s form {
   width: 100%;
   height: 100px;
   margin: 5% 0;
 }
-.foundation-s .head-container-s header .head-left-s .form button {
+.foundation-s .head-container-s header .head-left-s form button {
   font-size: 18px;
   padding: 10px 40px;
   background-color: #878ECD;
@@ -221,7 +221,7 @@
   border: none;
   border-radius: 5px;
 }
-.foundation-s .head-container-s header .head-left-s .form button:hover {
+.foundation-s .head-container-s header .head-left-s form button:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   -webkit-transition: all 0.2s ease;
@@ -353,7 +353,7 @@
 .foundation-s main .navbat-s {
   width: 100%;
   height: 400px;
-  background-image: url("img/back-end2.png");
+  background-image: url("../img/back-end2.png");
   background-size: cover;
   background-position: center;
   display: -webkit-box;
@@ -380,10 +380,10 @@
   margin-top: 15px;
   color: rgb(39, 36, 36);
 }
-.foundation-s main .navbat-s .navbat-left-s .form1 {
+.foundation-s main .navbat-s .navbat-left-s div {
   margin-top: 20px;
 }
-.foundation-s main .navbat-s .navbat-left-s .form1 button {
+.foundation-s main .navbat-s .navbat-left-s div button {
   font-size: 18px;
   padding: 10px 40px;
   background-color: #0B0B2F;
@@ -391,7 +391,7 @@
   border: none;
   border-radius: 5px;
 }
-.foundation-s main .navbat-s .navbat-left-s .form button:hover {
+.foundation-s main .navbat-s .navbat-left-s div button:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   -webkit-transition: all 0.2s ease;
@@ -415,6 +415,217 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+/* meditcine */
+.foundation-s .medicine_kh {
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  font-family: "Poppins";
+}
+.foundation-s .medicine_kh .medicine_nav_kh {
+  width: 100%;
+  height: 10vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-grid-columns: auto 10% auto 10% auto 10% auto;
+  grid-template-columns: auto auto auto auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10%;
+  margin-top: 20px;
+}
+.foundation-s .medicine_kh .medicine_nav_kh button {
+  width: 200px;
+  height: 50px !important;
+  background: #F2F5FF;
+  -webkit-box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.75), 4px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.75), 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border-color: #fff;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh {
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 40% 20%;
+  grid-template-columns: 20% 40% 20%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .medicine_blok_1_kh_items {
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .item_1_kh {
+  -ms-grid-rows: 300px 300px;
+  grid-template-rows: 300px 300px;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .item_1_kh .item_1_kh_items {
+  background-color: #E6F0FC;
+  padding: 20px;
+  border-radius: 10px;
+  height: 90%;
+  width: 80%;
+  margin-left: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 70% 30%;
+  grid-template-rows: 70% 30%;
+  -webkit-box-pack: center img;
+      -ms-flex-pack: center img;
+          justify-content: center img;
+  justify-content-margin-top: 10px;
+  justify-content-width: 80%;
+  justify-content-height: auto;
+  justify-content-margin: 0 auto;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .item_1_kh .item_1_kh_items h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  margin-top: 40px;
+  letter-spacing: 0.05em;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .item_2_kh {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  margin-left: -20px;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .item_2_kh .item_2_kh_items {
+  width: 90%;
+  height: 90%;
+  background-color: #E6F0FC;
+  border-radius: 10px;
+  margin: 2.5% auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 60% 40%;
+  grid-template-rows: 60% 40%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .item_2_kh .item_2_kh_items img {
+  width: 30%;
+  margin: 10px auto;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .item_2_kh .item_2_kh_items .title {
+  width: 70%;
+  margin: 0 auto;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .item_2_kh .item_2_kh_items .title p {
+  font-family: monospace;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0.05em;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .item_2_kh .item_2_kh_items .title button {
+  width: 106px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: rgb(0, 153, 255);
+  border-color: rgb(0, 153, 255);
+  color: white;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .item_3_kh {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 300px 300px;
+  grid-template-rows: 300px 300px;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .item_3_kh .item_1_kh_items {
+  background-color: #E6F0FC;
+  padding: 20px;
+  border-radius: 10px;
+  height: 90%;
+  width: 80%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 70% 30%;
+  grid-template-rows: 70% 30%;
+  -webkit-box-pack: center img;
+      -ms-flex-pack: center img;
+          justify-content: center img;
+  justify-content-margin-top: 10px;
+  justify-content-width: 80%;
+  justify-content-height: auto;
+  justify-content-margin: 0 auto;
+}
+.foundation-s .medicine_kh .medicine_blok_1_kh .item_3_kh .item_1_kh_items h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  margin-top: 40px;
+  letter-spacing: 0.05em;
+}
+.foundation-s .medicine_kh .medicine_blok_2_kh {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-grid-columns: auto 50px auto 50px auto 50px auto;
+  grid-template-columns: auto auto auto auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 300px;
+  gap: 50px;
+  margin-left: -20px;
+}
+.foundation-s .medicine_kh .medicine_blok_2_kh .medicine_blok_2_kh_items {
+  width: 250px;
+  height: 90%;
+  background-color: #E6F0FC;
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.foundation-s .medicine_kh .medicine_blok_2_kh .medicine_blok_2_kh_items img {
+  margin: 10px auto;
+}
+.foundation-s .medicine_kh .medicine_blok_2_kh .medicine_blok_2_kh_items h1 {
+  padding: 30px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+/* start footer */
+
 .foundation-s footer {
   width: 100%;
   height: auto;
@@ -518,7 +729,7 @@
   width: 100%;
   height: 100vh;
   margin-top: 20px;
-  background-image: url("img/band-etish.png");
+  background-image: url("../img/band-etish.png");
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;

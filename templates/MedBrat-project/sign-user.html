@@ -20,7 +20,7 @@
                 </div>
                 <!-- section main -->
                 <div class="main">
-                    {% csrf_token %}
+
                     <form method="post" action="{% url 'signup' %}">
                         {% csrf_token %}
                         <input type="text" placeholder="E-mail" name="email">
