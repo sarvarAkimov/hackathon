@@ -1,0 +1,257 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <title>MedBrat-Home</title>
+</head>
+<body>  
+    <div class="foundation-s">
+        <!-- section head-container-s -->
+        <div class="head-container-s">
+            <!-- menu -->
+            <menu>
+                <!-- logo -->
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="./img/img.png" alt="">
+                    </div>
+                    <h2>Med<span>Brat</span></h2>
+                </div>
+                <!-- menu-text -->
+                <div class="menu-text">
+                    <ul>
+                        <li><a href="">Asosiy</a></li>
+                        <li><a href="{% url 'chatting' %}">Shuxbatlashish</a></li>
+                        <li><a href="{% url 'time' %}">Bant-etish</a></li>
+                        <li><a href="{% url 'dorilar_url' %}">Dorilar</a></li>
+                        <li><a href="{% url 'maqolalar_view' %}">Maqolalar</a></li>
+                    </ul>
+                </div>
+                <!-- login -->
+                <div class="login">
+                    <form action="{% url 'signup' %}">
+                        <button type="submit">
+                            Kirish
+                        </button>
+                    </form>
+
+                </div>
+            </menu>
+            <!-- extra-menu -->
+            <div class="extra-menu">
+                <form method="post" action="{% url 'search' %}">
+                    {% csrf_token %}
+                    <input  type="text" placeholder="Qidirish..." name="searched">
+                    <button style="" type="submit"><i style="position: relative; margin-left: -5%; color: #fff;" class="bi bi-search"></i></button>
+                </form>
+                <button>Yoqtirilgan <i class="bi bi-star-fill"></i></button>
+                <button>Shifokor bilan suxbat <i class="bi bi-people-fill"></i></button>
+                <select name="" id="">
+                    <option value="1">English</option>
+                    <option value="2">Uzbek </option>
+                    <option value="3">Russian</option>
+                </select>
+            </div>
+            <!-- section header -->
+            <header>
+                <!-- head-left-s -->
+                <div class="head-left-s">
+                    <h1>O`zbekistondagi barcha Dori darmonlar Ro`yxati</h1>
+                    <p>Lorem assumenda culpa veritatis eos animi in iure consequatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis illum provident ab corporis eveniet sunt similique dolorum dolore, ipsa reprehenderit.</p>
+                    <form action="GET">
+                        <button type="submit">Ko`rish</button>
+                    </form>  
+                </div>
+                <!-- head-right-s -->
+                <div class="head-right-s">
+                    <!-- items -->
+                    <img src="{% static 'img/img9.png' %}" alt="">
+                    <img src="{% static 'img/img8.jpg' %}" alt="">
+                    <img src="{% static 'img/img11.jpg' %}" alt="">
+                    <img src="{% static 'img/img8.jpg' %}" alt="">
+                    <img src="{% static 'img/img9.png' %}" alt="">
+                    <img src="{% static 'img/img9.png' %}" alt="">
+                    <img src="{% static 'img/img11.jpg' %}" alt="">
+                    <img src="{% static 'img/img9.png' %}" alt="">
+                    <img src="{% static 'img/img8.jpg' %}" alt="">
+                </div>
+            </header>
+        </div>
+        <!-- main -->
+        <main>
+            <!-- post-container -->
+            <div class="post-container-s">
+                <!-- post -->
+                {% for i in maqolas %}
+
+                    <div class="post">
+                    <img src="img/img8.jpg" alt="">
+                    <a href="{% url 'maqola_detail' pk=i.pk %}"><h5 class="title"> {{ i.name }}</h5></a>
+                    <img src="{{ i.photos.url }}" alt="">
+                    <p>{{ i.author.user.full_name }}</p>
+                    <div class="reactions">
+                        <div class="like">
+                            <i class="bi bi-heart"></i>
+                            <h4 class="amount">12K</h4>
+                        </div>
+                        <div class="comment">
+                            <i class="bi bi-chat-dots"></i>
+                            <h4>1K</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- post -->
+<!--                <div class="post">-->
+<!--                    <img src="img/img11.jpg" alt="">-->
+<!--                    <h5 class="title">Toshkent tibbiyot bosh vrachi</h5>-->
+<!--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, tempore!...</p>-->
+<!--                    <div class="reactions">-->
+<!--                        <div class="like">-->
+<!--                            <i class="bi bi-heart"></i>-->
+<!--                            <h4 class="amount">12K</h4>-->
+<!--                        </div>-->
+<!--                        <div class="comment">-->
+<!--                            <i class="bi bi-chat-dots"></i>-->
+<!--                            <h4>1K</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; post &ndash;&gt;-->
+<!--                <div class="post">-->
+<!--                    <img src="img/img1.jpg" alt="">-->
+<!--                    <h5 class="title">Toshkent tibbiyot bosh vrachi</h5>-->
+<!--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, tempore!...</p>-->
+<!--                    <div class="reactions">-->
+<!--                        <div class="like">-->
+<!--                            <i class="bi bi-heart"></i>-->
+<!--                            <h4 class="amount">12K</h4>-->
+<!--                        </div>-->
+<!--                        <div class="comment">-->
+<!--                            <i class="bi bi-chat-dots"></i>-->
+<!--                            <h4>1K</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; post &ndash;&gt;-->
+<!--                <div class="post">-->
+<!--                    <img src="img/img9.png" alt="">-->
+<!--                    <h5 class="title">Toshkent tibbiyot bosh vrachi</h5>-->
+<!--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, tempore!...</p>-->
+<!--                    <div class="reactions">-->
+<!--                        <div class="like">-->
+<!--                            <i class="bi bi-heart"></i>-->
+<!--                            <h4 class="amount">12K</h4>-->
+<!--                        </div>-->
+<!--                        <div class="comment">-->
+<!--                            <i class="bi bi-chat-dots"></i>-->
+<!--                            <h4>1K</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; post &ndash;&gt;-->
+<!--                <div class="post">-->
+<!--                    <img src="img/img8.jpg" alt="">-->
+<!--                    <h5 class="title">Toshkent tibbiyot bosh vrachi</h5>-->
+<!--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, tempore!...</p>-->
+<!--                    <div class="reactions">-->
+<!--                        <div class="like">-->
+<!--                            <i class="bi bi-heart"></i>-->
+<!--                            <h4 class="amount">12K</h4>-->
+<!--                        </div>-->
+<!--                        <div class="comment">-->
+<!--                            <i class="bi bi-chat-dots"></i>-->
+<!--                            <h4>1K</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; post &ndash;&gt;-->
+<!--                <div class="post">-->
+<!--                    <img src="img/img1.jpg" alt="">-->
+<!--                    <h5 class="title">Toshkent tibbiyot bosh vrachi</h5>-->
+<!--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, tempore!...</p>-->
+<!--                    <div class="reactions">-->
+<!--                        <div class="like">-->
+<!--                            <i class="bi bi-heart"></i>-->
+<!--                            <h4 class="amount">12K</h4>-->
+<!--                        </div>-->
+<!--                        <div class="comment">-->
+<!--                            <i class="bi bi-chat-dots"></i>-->
+<!--                            <h4>1K</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>  
+            <!-- navbat  -->
+            <div class="navbat-s">
+                <!-- navbat-left-s -->
+                <div class="navbat-left-s">
+                    <h4>180 dan Ortiq shifohonalar</h4>
+                    <h1>O`zbekistondagi barcha shifohonalardan <br> online navbat olish</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint sunt vel incidunt, libero cum doloremque earum facilis corrupti impedit accusantium soluta deserunt, consequatur corporis odio. Aperiam reiciendis ipsum deleniti iure.</p>
+                    <form action="GET">
+                        <button type="submit">
+                            Navbat olish
+                        </button>
+                    </form>
+                </div>
+                <!-- navbat-right-s -->
+                <div class="navbat-right-s">
+                    <img src="{% static 'img/img6.png' %}" alt="">
+                </div>
+            </div>
+
+        </main>
+        <!-- footer -->
+        <footer>
+            <div class="footer-container">
+                <!-- logo -->
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="{% static 'img/img.png' %}" alt="">
+                    </div>
+                    <h2>Med<span>Brat</span></h2>
+                </div>
+                <div class="foot-navigation">
+                    <div class="foot-nav-item">
+                        <h2>Bo`limlar</h2>
+                        <a href="#"><h3>Asosiy</h3></a>
+                        <a href="#"><h3>Tez yordam</h3></a>
+                        <a href="band-etmoq1.html"><h3>Navbat olish</h3></a>
+                        <a href="#"><h3>Dori darmonlar</h3></a>
+                    </div>
+                    <div class="foot-nav-item">
+                        <h2>Malumotlar</h2>
+                        <a href="#"><h3>Biz xaqimizda</h3></a>
+                        <a href="#"><h3>Bizning sayt</h3></a>
+                        <a href="#"><h3>Xizmatlar turi</h3></a>
+                        <a href="#"><h3>Xamkorlik qilish</h3></a>
+                    </div>
+                    <div class="foot-nav-item">
+                        <h2>Rivojlanish uchun yordam</h2>
+                        <a href="#"><h3>Paypel</h3></a>
+                        <a href="#"><h3>VISA</h3></a>
+                        <a href="#"><h3>HUMO</h3></a>
+                        <a href="#"><h3>UZCARD</h3></a>
+                    </div>
+                    <div class="foot-nav-item">
+                        <h2>Bizni kuzatib boring</h2>
+                        <div class="social-nets">
+                            <a href="#"><i style="color: rgb(43, 138, 157);" class="bi bi-telegram"></i></a>
+                            <a href="#"><i style="color: rgb(217, 131, 45);" class="bi bi-instagram"></i></a>
+                            <a href="#"><i style="color: red;" class="bi bi-youtube"></i></a>
+                            <a href="#"><i style="color: rgb(35, 35, 214);" class="bi bi-facebook"></i></a>
+                            <a href="#"><i style="color: rgb(43, 140, 195);" class="bi bi-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

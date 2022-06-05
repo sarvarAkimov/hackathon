@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <form method="post" action="{% url 'time' %}">
+        {% csrf_token %}
+        <hr>
+        Shifoxona<br>
+        <select name="medicine">
+            {% for i in medicine %}
+                <option label="{{ i.name }}"  value="{{ i.id }}"></option>
+            {% endfor %}
+        </select>
+        <hr>
+        Kasb<br>
+        <select name="occupation">
+            {% for i in occupations %}
+                <option label="{{ i.name }}" value="{{ i.id }}"></option>
+            {% endfor %}
+        </select>
+        <hr>
+        Xamshirani<br>
+        <select name="nurse">
+            {% for i in nurse %}
+                <option label="{{ i.user.username }}" value="{{ i.id }}"></option>
+            {% endfor %}
+        </select>
+        <hr>
+        Vaqt
+        <select name="time_type">
+            <option value="short">10 minut</option>
+            <option value="long">20 minut</option>
+        </select>
+        <hr>
+        <input type="date" name="data">
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

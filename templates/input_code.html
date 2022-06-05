@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin:auto;" method="POST" action="{% url 'check_code' %}">
+        {% csrf_token %}
+        <hr>
+        code
+        <input type="hidden" value="{{ email }}" name="email">
+        <input type="hidden" value="{{ username }}" name="username">
+        <input type="hidden" value="{{ random }}" name="random">
+        <input type="hidden" value="{{ password }}" name="password">
+
+        <input type="text" name="input_code">
+        <BUTTON type="submit">submit</BUTTON>
+
+    </form>
+</body>
+</html>

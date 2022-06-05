@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+</style>
+<body>
+<div>
+    {{ tabletka.name }}<br>
+    {{ tabletka.quil.html|safe }}<br>
+    {% for kasalik in tabletka.kasalik.all %}
+        {{ kasalik }}
+    {{ maqola.quil.html|safe }}<br>
+
+</div>
+{% endfor %}
+
+</body>
+</html>

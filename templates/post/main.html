@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<form method="POST" action="{% url 'search' %}">
+    {% csrf_token %}
+    <input type="text" name="searched">
+    <button type="submit">search</button>
+</form>
+{% for maqola in maqolas %}
+<div style="border: solid 1px black">
+    <a href="{% url 'maqola_detail' pk=maqola.pk %}">{{ maqola.name }}</a>
+    {{ maqola.quil.html|safe }}<br>
+
+</div>
+{% endfor %}
+{% for tabletka in dori %}
+<div style="border: solid 1px black">
+    <a href="{% url 'tabletka_detail' pk=tabletka.pk %}">{{ tabletka.name }}</a>
+    {{ tabletka.quil.html|safe }}<br>
+
+</div>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SEEING</title>
+    <style>
+        .flexx{
+            display:flex;
+            flex-direction: column;
+            gap:1px
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flexx">
+    {% for i  in times %}
+        {% if i in time %}
+            {% for u in checks %}
+                {% if u.vaqt == i %}
+                    <div style="height: 30px; width: 10px; background-color:red;">{{ u.from_user_check.username }}</div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <div style="height: 30px; width: 10px; background-color:green;">BO`SH</div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {{ form.media }}
+<form method="post" action="{% url 'change_change' pk=pk %}"> {% csrf_token %}
+
+    name{{ form.name }}
+    {{ form.quil }}
+
+  <button type="submit">SUBMIT</button>
+</form>
+</body>
+</html>

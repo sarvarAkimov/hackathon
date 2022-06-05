@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form style="margin:auto;" method="POST" action="{% url 'nurse_check_code' %}">
+        {% csrf_token %}
+        <hr>
+        code
+        <input type="hidden" value="{{ email }}" name="email">
+        <input type="hidden" value="{{ full_name }}" name="full_name">
+        <input type="hidden" value="{{ random }}" name="random">
+        <input type="hidden" value="{{ password }}" name="password">
+        <input type="hidden" value="{{ shifoxona }}" name="shifoxona">
+        <input type="hidden" value="{{ credit_card }}" name="credit_card">
+        <input type="hidden" value="{{ minut_10 }}" name="minut_10">
+        <input type="hidden" value="{{ minut_20 }}" name="minut_20">
+        <input type="hidden" value="{{ occupation }}" name="occupation">
+        <input type="text" name="input_code">
+        <BUTTON type="submit">submit</BUTTON>
+
+    </form>
+</body>
+</html>

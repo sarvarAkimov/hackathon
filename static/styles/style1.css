@@ -1,0 +1,594 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,200;1,300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", "sans-serif";
+}
+
+.asos {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.asos .menu-container {
+  width: 95%;
+  height: auto;
+}
+.asos .menu-container menu {
+  width: 100%;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.asos .menu-container menu .logo {
+  width: 30%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.asos .menu-container menu .logo .logo-img {
+  width: auto;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10px;
+}
+.asos .menu-container menu .logo .logo-img img {
+  width: 5vw;
+  height: 5vh;
+}
+.asos .menu-container menu .logo h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.asos .menu-container menu .logo h2 span {
+  color: aqua;
+}
+.asos .menu-container menu .menu-text {
+  width: 60%;
+  height: 100%;
+}
+.asos .menu-container menu .menu-text ul {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.asos .menu-container menu .menu-text ul li {
+  list-style: none;
+}
+.asos .menu-container menu .menu-text ul li a {
+  text-decoration: none;
+  font-size: 20px;
+}
+.asos .menu-container menu .login {
+  width: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.asos .menu-container menu .login button {
+  padding: 6px 30px;
+  border-radius: 6px;
+  border: none;
+  font-size: 17px;
+  background-color: #878ECD;
+  color: globalWhite;
+}
+.asos .menu-container menu .login button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.asos .menu-container .extra-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 8vh;
+  width: 100%;
+  margin: 10px 0;
+  background-color: #B9BBDF;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 2px rgba(0, 0, 0, 0.25);
+}
+.asos .menu-container .extra-menu input {
+  height: 65%;
+  width: 33%;
+  border: none;
+  font-size: 20px;
+  margin-left: 2%;
+  background-color: transparent;
+  border-right: 1px solid #fff;
+}
+.asos .menu-container .extra-menu ::-webkit-input-placeholder {
+  color: #fff;
+}
+.asos .menu-container .extra-menu ::-moz-placeholder {
+  color: #fff;
+}
+.asos .menu-container .extra-menu :-ms-input-placeholder {
+  color: #fff;
+}
+.asos .menu-container .extra-menu ::-ms-input-placeholder {
+  color: #fff;
+}
+.asos .menu-container .extra-menu ::placeholder {
+  color: #fff;
+}
+.asos .menu-container .extra-menu button {
+  width: 22%;
+  height: 80%;
+  border: none;
+  font-size: 18px;
+  background-color: transparent;
+  color: white;
+  border-right: 1px solid white;
+}
+.asos .menu-container .extra-menu button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background-color: #abadd6;
+}
+.asos .menu-container .extra-menu select {
+  width: 18%;
+  height: 80%;
+  border: none;
+  background-color: #B9BBDF;
+  font-size: 20px;
+  color: white;
+}
+.asos main {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.asos main .post-container {
+  width: 95%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+.asos main .post-container .post {
+  width: 30%;
+  height: auto;
+  margin: 20px 0;
+  background-color: rgb(251, 246, 246);
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.asos main .post-container .post img {
+  margin: 10px 0;
+  width: 90%;
+  max-height: 250px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.asos main .post-container .post .title {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.asos main .post-container .post p {
+  padding: 10px 0;
+  width: 90%;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(64, 62, 62);
+}
+.asos main .post-container .post .reactions {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.asos main .post-container .post .reactions .like, .asos main .post-container .post .reactions .comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 25%;
+}
+.asos main .post-container .post .reactions .like i, .asos main .post-container .post .reactions .comment i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+.asos main .post-container .post .reactions .like h4, .asos main .post-container .post .reactions .comment h4 {
+  font-weight: 500;
+  font-size: 16px;
+  color: grey;
+}
+.asos main .navbat-olish {
+  width: 100%;
+  height: 55vh;
+  margin: 20px 0;
+  border: 1px solid black;
+}
+.asos main .tablets {
+  width: 100%;
+  height: 100vh;
+}
+.asos .medicine_kh {
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  font-family: "Poppins";
+}
+.asos .medicine_kh .medicine_nav_kh {
+  width: 100%;
+  height: 10vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-grid-columns: auto 10% auto 10% auto 10% auto;
+  grid-template-columns: auto auto auto auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10%;
+  margin-top: 20px;
+}
+.asos .medicine_kh .medicine_nav_kh button {
+  width: 200px;
+  height: 50px !important;
+  background: #F2F5FF;
+  -webkit-box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.75), 4px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.75), 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border-color: #fff;
+}
+.asos .medicine_kh .medicine_blok_1_kh {
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 40% 20%;
+  grid-template-columns: 20% 40% 20%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.asos .medicine_kh .medicine_blok_1_kh .medicine_blok_1_kh_items {
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_1_kh {
+  -ms-grid-rows: 300px 300px;
+  grid-template-rows: 300px 300px;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_1_kh .item_1_kh_items {
+  background-color: #E6F0FC;
+  padding: 20px;
+  border-radius: 10px;
+  height: 90%;
+  width: 80%;
+  margin-left: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 70% 30%;
+  grid-template-rows: 70% 30%;
+  -webkit-box-pack: center img;
+      -ms-flex-pack: center img;
+          justify-content: center img;
+  justify-content-margin-top: 10px;
+  justify-content-width: 80%;
+  justify-content-height: auto;
+  justify-content-margin: 0 auto;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_1_kh .item_1_kh_items img{
+width:150px;
+height:180px;}
+.asos .medicine_kh .medicine_blok_1_kh .item_1_kh .item_1_kh_items h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  margin-top: 40px;
+  letter-spacing: 0.05em;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_2_kh {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  margin-left: -20px;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_2_kh .item_2_kh_items {
+  width: 90%;
+  height: 90%;
+  background-color: #E6F0FC;
+  border-radius: 10px;
+  margin: 2.5% auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 60% 40%;
+  grid-template-rows: 60% 40%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_2_kh .item_2_kh_items img {
+  width: 250px;
+  height:300px;
+  margin: 10px auto;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_2_kh .item_2_kh_items .title {
+  width: 70%;
+  margin: 0 auto;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_2_kh .item_2_kh_items .title p {
+  font-family: monospace;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0.05em;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_2_kh .item_2_kh_items .title button {
+  width: 106px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: rgb(0, 153, 255);
+  border-color: rgb(0, 153, 255);
+  color: white;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_3_kh {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 300px 300px;
+  grid-template-rows: 300px 300px;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_3_kh .item_1_kh_items {
+  background-color: #E6F0FC;
+  padding: 20px;
+  border-radius: 10px;
+  height: 90%;
+  width: 80%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 70% 30%;
+  grid-template-rows: 70% 30%;
+  -webkit-box-pack: center img;
+      -ms-flex-pack: center img;
+          justify-content: center img;
+  justify-content-margin-top: 10px;
+  justify-content-width: 80%;
+  justify-content-height: auto;
+  justify-content-margin: 0 auto;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_3_kh .item_1_kh_items img {
+    width:150px;
+    height:180px;
+  margin: 10px auto;
+}
+.asos .medicine_kh .medicine_blok_1_kh .item_3_kh .item_1_kh_items h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  margin-top: 40px;
+  letter-spacing: 0.05em;
+}
+.asos .medicine_kh .medicine_blok_2_kh {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-grid-columns: auto 50px auto 50px auto 50px auto;
+  grid-template-columns: auto auto auto auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 300px;
+  gap: 50px;
+  margin-left: -20px;
+}
+.asos .medicine_kh .medicine_blok_2_kh .medicine_blok_2_kh_items {
+  width: 250px;
+  height: 90%;
+  background-color: #E6F0FC;
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.asos .medicine_kh .medicine_blok_2_kh .medicine_blok_2_kh_items img {
+    width:150px;
+    height:180px;
+    margin: 10px auto;
+}
+.asos .medicine_kh .medicine_blok_2_kh .medicine_blok_2_kh_items h1 {
+  padding: 30px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+.asos footer {
+  width: 100%;
+  height: auto;
+  background-color: #454545;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 100px;
+}
+.asos footer .footer-container {
+  width: 90%;
+  height: auto;
+}
+.asos footer .footer-container .logo {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.asos footer .footer-container .logo .logo-img {
+  width: auto;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10px;
+}
+.asos footer .footer-container .logo .logo-img img {
+  width: auto;
+  height: 6vh;
+}
+.asos footer .footer-container .logo h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.asos footer .footer-container .logo h2 span {
+  color: aqua;
+  font-weight: 300;
+}
+.asos footer .footer-container .foot-navigation {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 0;
+}
+.asos footer .footer-container .foot-navigation .foot-nav-item {
+  width: 25%;
+  height: auto;
+}
+.asos footer .footer-container .foot-navigation .foot-nav-item h2 {
+  width: 100%;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 22px;
+}
+.asos footer .footer-container .foot-navigation .foot-nav-item a {
+  text-decoration: none;
+}
+.asos footer .footer-container .foot-navigation .foot-nav-item a h3 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 10px 0;
+}
+.asos footer .footer-container .foot-navigation .foot-nav-item .social-nets {
+  margin-top: 30%;
+  width: 70%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.asos footer .footer-container .foot-navigation .foot-nav-item .social-nets a i {
+  font-size: 22px;
+}
+.asos footer .footer-container .foot-navigation .foot-nav-item .social-nets a:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}

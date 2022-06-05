@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,200;1,300&display=swap');
+$globalWhite:white;
+$ItemColor: #E6F0FC;
+$hoverColor_1:rgb(238, 223, 223);
+$hoverColor_2:#878ECD;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+}
+// asos
+.asos{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    // container
+    .menu-container{
+        width: 95%;
+        height: auto;
+        // menu
+        menu{   
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            // logo
+            .logo{
+                width: 30%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                // logo-img
+                .logo-img{
+                    width: auto;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    margin-right: 10px;
+                    img{
+                        width: 5vw;
+                        height: 5vh;
+                    }
+                }
+                h2{
+                    font-size: 30px;
+                    font-weight: 500;
+                    span{
+                        color: aqua;
+                    }
+                }
+            }
+            // menu-text
+            .menu-text{
+                width: 60%;
+                height: 100%;
+                ul{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    li{
+                        list-style: none;
+                        a{
+                            text-decoration: none;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+            // login
+            .login{
+                width: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                button{
+                    padding: 6px 30px;
+                    border-radius: 6px;
+                    border: none;
+                    font-size: 17px;
+                    background-color: #878ECD;
+                    color: globalWhite;
+                }
+                button:hover{
+                    transform: scale(1.05);
+                    transition: 0.2s ease;
+                }
+            }
+        
+        }
+    }
+      
+    // main
+    .chat_section_kh{
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 34.3% 65%;
+        .chat_user_kh{
+            width: 100%;
+            height: 100%;
+            background-color: #777777;
+            overflow: scroll;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+            .chat_user_kh_search{
+                width: 100%;
+                height: 40px;
+                border: 1px solid;
+                background-color: $globalWhite;
+                border-radius: 5px;
+                
+                input{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 5px;
+                    &:focus{
+                        background-color: $hoverColor_2;
+                    }
+                    
+                }
+                
+
+            }
+
+            .user_chat_kh_person{
+                width: 100%;
+                height: 70px;
+                background-color: $globalWhite;
+                margin: 5px 0;
+                display: grid;
+                grid-template-columns:15% 85% ;
+                border-radius: 5px;
+                &:hover{
+                    background-color: $hoverColor_1;
+                }
+                .user_pic{
+                    width: 100%;
+                    height: 70px;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    img{
+                        width: 55px;
+                        height: 55px;
+                        border-radius: 50%;
+                        margin: 5px 0;
+                    }
+                }
+                .user_info{
+                    .username{
+                        
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 17px;
+                        margin:  5px 0;
+                        span{
+                            float: right;
+                            margin-right: 15px;
+                            font-size: 12px;
+                            font-weight: 100;
+                        }
+                    }
+                    p{
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 17px;
+                    }
+                }
+
+
+            }
+        }
+        .chat_message_kh{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: 15% 75% 10%;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+
+            .message_user_info{
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-rows:70% 30% ;
+                .message_user_info_pic{
+                    width: 100%;
+                    height: 100%;
+                    .img{
+                        width: 80px;
+                        height: 70px;
+                        float: left;
+                        
+                        img{
+                            width: 90%;
+                            margin: 0 10px;
+                        }
+                       
+                    }
+                    h1{
+                        font-size: 18px;
+                        margin: 25px 30px;
+                        padding-left: 50px;
+                    }
+                }
+                .message_user_info_text{
+                    width: 100%;
+                    height: 100%;
+                    
+                    p{
+                        text-align: center;
+                        background-color: #878ECD;
+                    }
+                }
+
+                
+            }
+            .chat_section{
+                width: 100%;
+                height: 100%;
+                overflow: scroll;
+                &::-webkit-scrollbar{
+                    display: none;
+                }
+                .message_left{
+                    width: 60%;
+                    height: 80px;
+                    background:linear-gradient( 150deg , #D9D9D9, #878ECD) ;
+                    display: grid;
+                    border-radius: 20px;
+                    border-bottom-left-radius: 0px;
+                    margin: 20px;
+                }
+                .message_right{
+                    width: 60%;
+                    height: 80px;
+                    background:linear-gradient( 150deg ,#878ECD, #D9D9D9) ;
+                    display: grid;
+                    float: right;
+                    border-radius: 20px;
+                    border-bottom-right-radius: 0px;
+                    margin: 20px ;
+
+                }
+
+            }
+            .chat_typing{
+                width: 100%;
+                height: 80px;
+                position: fixed;
+                bottom: -14px;
+                input{
+                    width: 100%;
+                    height: 70%;
+                    display: flex;
+                    align-content: center;
+                    border-radius: 10px;
+                    margin-top: 10px;
+                    &:placeholder{
+                        margin-left: 20px;
+                    }
+                }
+            }
+            
+           
+        }
+        
+    }
+}
+
+

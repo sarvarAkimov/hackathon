@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Singin</title>
+</head>
+<body>
+    <a href="{% url 'signup' %}"><button type="submit">User</button></a>
+    <button type="button" >Xamshira</button>
+    <form style="margin:auto;" method="POST" action="{% url 'signup_hamshira' %}">
+        {% csrf_token %}
+        <hr>
+        email
+        <input type="text" name="email">
+        <hr>
+        Toliq ismingiz
+        <input type="text" name="full_name">
+        <hr>
+        password
+        <input type="text" name="password">
+        <hr>
+        Shifoxona
+        <select name="medicine" required>
+            {% for i in all_shifoxona %}
+                <option label="{{ i.name }}"  value="{{ i.id }}"></option>
+            {% endfor %}
+        </select>
+        <hr>
+        Kasb<br>
+        <select name="occupation" required>
+            {% for i in all_occupations %}
+                <option label="{{ i.name }}" value="{{ i.id }}"></option>
+            {% endfor %}
+        </select>
+        <hr>
+        Pasport
+        <input type="file" name="passport">
+        <hr>
+        Qabul narxlari
+        10 minut
+        <input type="number" name="10_minut" placeholder="0"> <br>
+        20 minut
+        <input type="number" name="20_minut" placeholder="0"><br>
+        Agar tekin bo`lsa 0 qilib qo`ying<hr>
+        <BUTTON type="submit">submit</BUTTON>
+    </form>
+</body>
+</html>

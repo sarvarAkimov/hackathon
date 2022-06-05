@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Xamshira</title>
+</head>
+<body>
+<form  method="post" action="{% url 'xamshira_add' %}">
+    {% csrf_token %}
+    <hr>
+    Ism sharif<br>
+    <input type="text" name="full_name">
+    <hr>
+    <hr>
+    EMAIL<br>
+    <input type="email" name="email">
+    <hr>
+    <hr>
+    Parol<br>
+    <input type="password" name="password">
+    <hr>
+    <hr>
+    Shifoxona<br>
+    <select name="medicine">
+        {% for i in medicine %}
+            <option label="{{ i.name }}"  value="{{ i.id }}"></option>
+        {% endfor %}
+    </select>
+    <hr>
+    Kasb<br>
+    <select name="occupation">
+        {% for i in occupations %}
+            <option label="{{ i.name }}" value="{{ i.id }}"></option>
+        {% endfor %}
+    </select>
+    <hr>
+    Pasport
+    <input type="file" name="pasport" required>
+    <hr>
+    Qabul narxlari
+    10 minut
+    <input type="number" name="10_minut" placeholder="0"> <br>
+    20 minut
+    <input type="number" name="20_minut" placeholder="0"><br>
+    Agar tekin bo`lsa 0 qilib qo`ying<hr>
+    <button type="submit"></button>
+</form>
+</body>
+</html>

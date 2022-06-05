@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .flexx{
+        display:flex;
+        flex-direction: row;
+        gap:1px
+    }
+</style>
+<body>
+    {% if type  == 'short' %}
+
+        <div class="flexx">
+        {% for i in times %}
+            {% if i.id in booked or i.name == 'abed' %}
+                <button style="background-color:red; width:25px; height:5px;"></button>
+            {% else %}
+                <form method="post" action="{% url 'time_data_add' pk=i.id %}">
+                    <input type="hidden" name="DATA" value="{{ date }}">
+                    <input type="hidden" name="pk_id" value="{{ pk_id }}">
+
+                    {% csrf_token %}
+                   <button  style="background-color:green; width:25px; height:5px;"></button>
+                </form>
+            {% endif %}
+        {% endfor %}
+         </div>
+    {% else %}
+        <div class="flexx">
+        {% for i in times %}
+            {% if i.0 == 'qizil' or i.1.name == 'abed' or i.2.name == 'abed' %}
+                <button style="background-color:red; width:25px; height:5px;"><span></span></button>
+            {% else %}
+                <form method="post" action="{% url 'time_data_add2' pk1=i.1 pk2=i.2  %}">
+                    <input type="hidden" name="DATA" value="{{ date }}">
+                    <input type="hidden" name="pk_id" value="{{ pk_id }}">
+                    {% csrf_token %}
+                   <button  style="background-color:green; width:25px; height:5px;"></button>
+                </form>
+            {% endif %}
+        {% endfor %}
+        </div>
+    {% endif %}
+</body>
+</html>
