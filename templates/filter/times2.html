@@ -1,21 +1,20 @@
-
-        <form method="post" action="{% url 'time_data_add' %}">
-
+<form method="post" action="{% url 'time_data_add2' %}">
             {% csrf_token %}
-        <select name="pk">
+            <select name="pk">
             {% for i in times %}
-                {% if i.id  in booked or i.name == 'abed' %}
+                {% if i.0 == 'qizil' or i.1.name == 'abed' or i.2.name == 'abed' %}
                     {{ pass }}
                 {% else %}
-                    <option  value="{{ i.id }}">
-                        {{ i.name }}
-                        </option>
+
+                    <option  label="{{ i.1.name }}" value="{{ i.1.id }} , {{ i.2.id  }}" >
+
+                    </option>
+
                 {% endif %}
             {% endfor %}
-         </select>
+            </select>
             <input type="hidden" name="DATA" value="{{ date }}">
             <input type="hidden" name="pk_id" value="{{ pk_id }}">
 
             <button  type="submit">Submit</button>
         </form>
-

@@ -208,12 +208,12 @@
   margin-top: 30px;
   font-size: 18px;
 }
-.foundation-s .head-container-s header .head-left-s form {
+.foundation-s .head-container-s header .head-left-s .form {
   width: 100%;
   height: 100px;
   margin: 5% 0;
 }
-.foundation-s .head-container-s header .head-left-s form button {
+.foundation-s .head-container-s header .head-left-s .form button {
   font-size: 18px;
   padding: 10px 40px;
   background-color: #878ECD;
@@ -221,7 +221,7 @@
   border: none;
   border-radius: 5px;
 }
-.foundation-s .head-container-s header .head-left-s form button:hover {
+.foundation-s .head-container-s header .head-left-s .form button:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   -webkit-transition: all 0.2s ease;
@@ -380,10 +380,10 @@
   margin-top: 15px;
   color: rgb(39, 36, 36);
 }
-.foundation-s main .navbat-s .navbat-left-s form {
+.foundation-s main .navbat-s .navbat-left-s .form1 {
   margin-top: 20px;
 }
-.foundation-s main .navbat-s .navbat-left-s form button {
+.foundation-s main .navbat-s .navbat-left-s .form1 button {
   font-size: 18px;
   padding: 10px 40px;
   background-color: #0B0B2F;
@@ -391,7 +391,7 @@
   border: none;
   border-radius: 5px;
 }
-.foundation-s main .navbat-s .navbat-left-s form button:hover {
+.foundation-s main .navbat-s .navbat-left-s .form button:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   -webkit-transition: all 0.2s ease;

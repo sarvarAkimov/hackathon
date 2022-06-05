@@ -1,0 +1,52 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/sign-up.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <title>Sign-up Nurse</title>
+</head>
+<body>
+    <div class="foundation">
+        <div class="sign-nurse-card">
+            <div class="card-container1">
+                <!-- section sel-nav -->
+                <div class="sel-nav">
+                    <a href="{% url 'signup' %}"><button>User</button></a>
+                    <a href=""><button>Hamshira</button></a>
+                </div>
+                <!-- section main -->
+                <div class="main">
+                    <form method="post" action="{% url 'signup_hamshira' %}">
+                        {% csrf_token %}
+                        <input type="text" placeholder="E-mail" name="email" >
+                        <input type="text" placeholder="Full-name" name="full_name">
+
+                        <input type="password" placeholder="Password" name="password">
+                        <input type="number" placeholder="Qabul Narhari 10 minut" name="10_minut">
+                        <input type="number" placeholder="Qabul Narhari 20 minut" name="20_minut">
+                        <select name="medicine" >
+                            {% for i in all_shifoxona %}
+                                <option label="{{ i.name }}"  value="{{ i.id }}"></option>
+                            {% endfor %}
+                            <option value="1">Shifohona</option>
+                        </select>
+                        <select name="occupation" >
+
+                            {% for i in all_occupations %}
+                                <option label="{{ i.name }}"  value="{{ i.id }}"></option>
+                            {% endfor %}
+                        </select>
+                        <input type="file" name="passport">
+                        <button type="submit">Sign-up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

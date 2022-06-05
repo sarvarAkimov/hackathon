@@ -40,7 +40,7 @@ def signup(request):
             print('Email sent!')
         except:
             print('Something went wrong...')
-        username = request.POST['username']
+        username = request.POST['name']
         password = request.POST['password']
 
 
@@ -52,7 +52,7 @@ def signup(request):
         })
 
     else:
-        return render(request, 'singup.html', {})
+        return render(request, 'MedBrat-project/sign-user.html', {})
 
 def check_code(request):
     input_code = request.POST['input_code']
@@ -65,7 +65,7 @@ def check_code(request):
         auth = authenticate(request, email=email, password=password, full_name=username)
         auth = User.objects.get(email=email, password=password, full_name=username)
         login(request, auth)
-        return redirect('login.html')
+        return redirect('singin')
     else:
         return redirect('input_code.html')
 
@@ -129,7 +129,7 @@ def add_nurse(request):
         })
 
     else:
-        return render(request, 'signup_nurse.html', {
+        return render(request, 'MedBrat-project/sign-nurse.html', {
 
             'all_shifoxona': all_shifoxona,
             'all_occupations': all_occupations,})
@@ -163,7 +163,7 @@ def check_code_hamshira(request):
         auth = authenticate(request, email=email, password=password, full_name=full_name)
         auth = User.objects.get(email=email, password=password, full_name=full_name)
         login(request, auth)
-        return redirect('login.html')
+        return redirect('MedBrat-project/login.html')
     else:
         return redirect('nurse_input_code.html')
 
@@ -262,21 +262,25 @@ def search(request):
         return render(request, 'MedBrat-project/index.html', {
             'maqolas':list1,
             'dori':list2,
+
         })
     elif length1 >= 7 and length2 < 7:
         return render(request, 'MedBrat-project/index.html', {
             'maqolas':list1[:6],
             'dori':list2,
+
         })
     elif length1 < 7 and length2 >= 7:
         return render(request, 'MedBrat-project/index.html', {
             'maqolas':list1,
             'dori':list2[:6],
+
         })
     elif length1 >=7 and length2 >= 7:
         return render(request, 'MedBrat-project/index.html', {
             'maqolas': list1[:6],
             'dori': list2[:6],
+
         })
 
 def dorilar_view(request):

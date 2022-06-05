@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/sign-up.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <title>Sign-up User</title>
+    <title>Varification-code</title>
 </head>
 <body>
     <div class="foundation">
@@ -15,19 +15,19 @@
             <div class="card-container">
                 <!-- section sel-nav -->
                 <div class="sel-nav">
-                    <a href="{% url 'signup' %}"><button>User</button></a>
-                    <a href="{% url 'signup_hamshira' %}"><button>Hamshira</button></a>
+                    <h2>Enter-Code</h2>
                 </div>
                 <!-- section main -->
                 <div class="main">
-                    {% csrf_token %}
-                    <form method="post" action="{% url 'signup' %}">
+                    <form method="post">
                         {% csrf_token %}
-                        <input type="text" placeholder="E-mail" name="email">
-                        <input type="text" placeholder="Full-name" name="name">
+                        <input type="hidden" value="{{ email }}" name="email">
+                        <input type="hidden" value="{{ username }}" name="username">
+                        <input type="hidden" value="{{ random }}" name="random">
+                        <input type="hidden" value="{{ password }}" name="password">
 
-                        <input type="password" placeholder="Password" name="password">
-                        <button type="submit">Sign-up</button>
+                        <input type="password" placeholder="Input the code" name="input_code">
+                        <button type="submit">Submit</button>
                     </form>
                 </div>
             </div>

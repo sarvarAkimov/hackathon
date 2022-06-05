@@ -10,7 +10,7 @@
 <body>
     <a href="{% url 'signup' %}"><button type="submit">User</button></a>
     <button type="button" >Xamshira</button>
-    <form style="margin:auto;" method="POST" action="{% url 'signup_hamshira' %}">
+    <form style="margin:auto;" method="post" action="{% url 'signup_hamshira' %}">
         {% csrf_token %}
         <hr>
         email

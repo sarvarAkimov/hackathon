@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <script src="https://unpkg.com/htmx.org@1.1.0"></script>
     <title>Band-etmoq</title>
 </head>
 <body>
@@ -18,17 +19,18 @@
                 <!-- logo -->
                 <div class="logo">
                     <div class="logo-img">
-                        <img src="{% static '/img/img.png' %}" alt="">
+                        <img src="{% static './img/img.png' %}" alt="">
                     </div>
                     <h2>Med<span>Brat</span></h2>
                 </div>
                 <!-- menu-text -->
                 <div class="menu-text">
                     <ul>
-                        <li><a href="index.html">Asosiy</a></li>
-                        <li><a href="chat.html">Shuxbatlashish</a></li>
-                        <li><a href="sreach.html">Dorilar</a></li>
-                        <li><a href="post.html">Maqolalar</a></li>
+                        <li><a href="{% url 'all_maqola' %}">Asosiy</a></li>
+                        <li><a href="{% url 'chat'  pk=3 %}">Shuxbatlashish</a></li>
+                        <li><a href="{% url 'time' %}">Bant-etish</a></li>
+                        <li><a href="{% url 'dorilar_url' %}">Dorilar</a></li>
+                        <li><a href="{% url 'maqolalar_view' %}">Maqolalar</a></li>
                     </ul>
                 </div>
                 <!-- login -->
@@ -58,7 +60,7 @@
             </div>
             <!-- section band1-right -->
             <div class="band1-right">
-                <div class="band1-right-con">
+                <form class="band1-right-con">
                     <h3 class="label">Shifohonani tanlang</h3>
                     <select name="select1">
                         {% for i in medicine %}
@@ -72,30 +74,32 @@
                         {% endfor %}
                     </select>
                     <h3 class="label">Shifokorni talang</h3>
-                    <select name="select3">
+                    <select name="select3" >
                         {% for i in nurse %}
                             <option value="{{ i.id }}">{{ i.user.full_name }}</option>
                         {% endfor %}
                     </select>
                     <h3 class="label">Vaqtni tanlang</h3>
-                    <input type="date" name="input" placeholder="">
+                    <input type="date" name="data" placeholder="" >
+                    {% csrf_token %}
                     <div class="vaqtni-tanla">
                         <div class="vaqt-buttons">
-                            <button>10-daqiqa</button>
-                            <button style="margin-left: 15px;">20-daqiqa</button>
+                            <button hx-post="{% url 'times' type='short' %}"  hx-target=".this1" hx-swap="innerHTML" name="type">10-daqiqa</button>
+                            <button hx-post="{% url 'times' type='long' %}"  hx-target=".this1" hx-swap="innerHTML" style="margin-left: 15px;" name="type">20-daqiqa</button>
                         </div>
-                        <select>
-                        {% for i in time %}
-                            <option value="{{ i.id }}">{{ i.name }}</option>
-                        {% endfor %}
-                        </select>
-                        <div class="vaqt-buttons">
-                            <button style="margin-left: 15px;">Submit</button>
+                        <div class="this1">
+
                         </div>
+
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
 </body>
+    <script>
+      document.body.addEventListener('htmx:configRequest', (event) => {
+        event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+      })
+    </script>
 </html>

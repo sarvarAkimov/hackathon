@@ -283,7 +283,7 @@
         .navbat-s{
             width: 100%;
             height: 400px;
-            background-image: url("img/back-end2.png");
+            background-image: url("../img/back-end2.png");
             background-size: cover;
             background-position: center;
             display: flex;
@@ -305,7 +305,7 @@
                     margin-top: 15px;
                     color: rgb(39, 36, 36);
                 }
-                form{
+                div{
                     margin-top: 20px;
                     // button
                     button{
@@ -337,6 +337,7 @@
                 justify-content: center;
             }
         }   
+        
     }
     // footer
     footer{
@@ -427,7 +428,7 @@
         width: 100%;
         height: 100vh;
         margin-top: 20px;
-        background-image: url("img/band-etish.png");
+        background-image: url("../img/band-etish.png");
         background-size: cover;
         display: flex;
         // band1-left

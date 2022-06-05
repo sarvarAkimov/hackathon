@@ -27,7 +27,7 @@
                 <div class="menu-text">
                     <ul>
                         <li><a href="{% url 'all_maqola' %}">Asosiy</a></li>
-                        <li><a href="{% url 'chatting' %}">Shuxbatlashish</a></li>
+                        <li><a href="{% url 'chat pk=3' %}">Shuxbatlashish</a></li>
                         <li><a href="{% url 'time' %}">Bant-etish</a></li>
                         <li><a href="{% url 'dorilar_url' %}">Dorilar</a></li>
                         <li><a href="{% url 'maqolalar_view' %}">Maqolalar</a></li>
@@ -76,7 +76,7 @@
                <div class="medicine_blok_1_kh">
                    <div class="medicine_blok_1_kh_items item_1_kh">
                        <div class="item_1_kh_items">
-                            <img src="{{ dorilar.0.photo.url }}" alt="">
+                            <img style="width:150px; height:200px;" src="{{ dorilar.0.photo.url }}" alt="">
                             <div class="title">
                                 <h1>
                                     <a href="{% url 'tabletka_detail' pk=dorilar.0.pk %}">{{ dorilar.0.name }}</a>

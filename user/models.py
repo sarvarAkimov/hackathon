@@ -6,8 +6,10 @@ from django_quill.fields import QuillField
 class User(AbstractUser):
     email = models.EmailField(unique=True)
     full_name = models.CharField(max_length=450, default='Akimov Sarvar')
+    photo = models.ImageField(upload_to='media', blank='True')
     password = models.CharField(max_length=150)
     id = models.AutoField(unique=True, primary_key=True)
+
     credit_card = models.BigIntegerField(blank=True, null=False, default=1235123112341234)
 
     USERNAME_FIELD = 'email'

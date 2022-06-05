@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from .models import  *
@@ -18,18 +18,20 @@ def singin(request):
         auth = User.objects.get(email=email, password=password)
         login(request,auth)
 
-        return redirect('chat',pk=1)
+        return redirect('all_maqola')
 
     else:
-        return render(request, 'filter/singup.html', {})
+        return render(request, 'MedBrat-project/login.html', {})
 
 
 @login_required
 def chat(request, pk):
     chat_chat = Chat.objects.get(id=pk)
+    chats = Chat.objects.all()
 
-    return render(request, 'filter/chat.html', {
-        'chat':chat_chat
+    return render(request, 'MedBrat-project\chat.html', {
+        'chat':chat_chat,
+        'chats':chats
     })
 
 
@@ -98,24 +100,27 @@ def time(request):
             'time':Time.objects.all()
         })
 
-def times(request,pk,data,type):
+def times(request,type):
+    data = request.POST['data']
+    pk =request.POST['select3']
+
     times_in = Time.objects.all()
     nurse = Xamshira.objects.get(id=pk)
     if type == 'short':
         data1 = Check_time.objects.filter(date= data,user_id=pk)
         list1 = []
+        text = ''
         for i in data1:
             list1.append(i.vaqt.id)
-
         return render(request,'filter/time.html',{
-            'nurse':nurse,
-            'times':times_in,
+            'type':type,
+            'times':Time.objects.all(),
             'booked':list1,
-            'date':data,
             'pk_id':pk,
-            'type': 'short'
+            'date':data
         })
     else:
+        text = ''
         times_in = Time.objects.all()
         data1 = Check_time.objects.filter(date=data, user_id=pk)
         list3 = []
@@ -132,6 +137,7 @@ def times(request,pk,data,type):
                 if list3[index+1].id not in list1:
                     list2.append(['yashil',i,list3[index+1]])
                     list3.pop(int(index)+1)
+
                 else:
                     list2.append(['qizil', i, list3[index + 1]])
                     list3.pop(int(index)+1)
@@ -139,17 +145,18 @@ def times(request,pk,data,type):
                 list2.append(['qizil', i, list3[index + 1]])
                 list3.pop(int(index)+1)
 
-        return  render(request,'filter/time.html',{
-            'nurse':nurse,
+        return render(request,'filter/times2.html',{
+            'type':type,
             'times':list2,
             'booked':list1,
-            'date':data,
-            'pk_id':pk,
-            'type':'long'
+            'pk_id': pk,
+            'date':data
+
         })
-def time_data_add(request,pk):
+def time_data_add(request):
     data = request.POST['DATA']
     id = request.POST['pk_id']
+    pk = request.POST['pk']
     nurse = Xamshira.objects.get(id=id)
     vaqt = Time.objects.get(id=pk)
     try:
@@ -162,13 +169,18 @@ def time_data_add(request,pk):
             #                             summ=nurse.minut_10,to_us=int(int(nurse.minut_10)*0.1),
             #                             from_user=request.user)
         user =Check_time.objects.create(date=data,user=nurse,vaqt=vaqt,from_user_check=request.user)
-    return redirect('times',pk=id,data=data,type='short')
+    return redirect('time')
 
 
-def time_data_add2(request,pk1,pk2):
+def time_data_add2(request):
     data = request.POST['DATA']
     id = request.POST['pk_id']
     nurse = Xamshira.objects.get(id=id)
+    pk = request.POST['pk']
+    pk = str(pk).split(',')
+    pk1 = pk[0]
+    pk2 = pk[1]
+    print(pk2 , pk1[0])
     vaqt1 = Time.objects.get(id=pk1)
     vaqt2 = Time.objects.get(id=pk2)
     try:
@@ -178,14 +190,14 @@ def time_data_add2(request,pk1,pk2):
         user =Check_time.objects.create(date=data,user=nurse,vaqt=vaqt1,from_user_check_id=request.user.id)
         user =Check_time.objects.create(date=data,user=nurse,vaqt=vaqt2,from_user_check_id=request.user.id)
     except:
-        if nurse.minut_10 > 0:
-            Transactions.objects.create(from_card=request.user.cridit_card, to_card=nurse.user.cridit_card,
-                                        summ=nurse.minut_10, to_us=int(int(nurse.minut_10) * 0.1),
-                                        from_user=request.user)
+        # if nurse.minut_10 > 0:
+        #     Transactions.objects.create( to_card=nurse.user.cridit_card,
+        #                                 summ=nurse.minut_10, to_us=int(int(nurse.minut_10) * 0.1),
+        #                                 from_user=request.user)
 
         user = Check_time.objects.create(date=data, user=nurse, vaqt=vaqt1, from_user_check_id=request.user.id)
         user = Check_time.objects.create(date=data, user=nurse, vaqt=vaqt2, from_user_check_id=request.user.id)
-    return redirect('times',pk=id,data=data,type='long')
+    return redirect('time')
 
 def chatting(request):
     if request.method == 'POST':
@@ -206,7 +218,7 @@ def chatting(request):
         occupations = Occupation.objects.all()
         hospitals= Hospitals.objects.all()
         nurses = Xamshira.objects.all()
-        return render(request,'MedBrat-project/band-etmoq2.html',{
+        return render(request,'MedBrat-project/band-etmoq1.html',{
             'occupations':occupations,
             'hospitals':hospitals,
             'hamshira':nurses
@@ -219,7 +231,9 @@ def Chats(request):
         chat = Chat.objects.filter(to_users=xamshira)
     except:
         chat = Chat.objects.filter(from_user=user)
-    return render(request,'filter/chats.html',{
+
+    chat = Chat.objects.all()
+    return render(request,'filter/chat.html',{
         'chats':chat
     })
 
@@ -262,7 +276,7 @@ def statistic(request):
 
     shifoxona = Hospitals.objects.get(main_nurse = Xam)
     xamshiras = Xamshira.objects.filter(shifoxona=shifoxona)
-    return render(request,'filter/xamshiras.html',{
+    return render(request,'MedBrat-project/user1.html',{
         'xamshiras':xamshiras
     })
 
@@ -285,10 +299,10 @@ def add_followers(request,pk):
         follower.followers.add(user)
 
 def add_like(request,pk):
-    to = request.POST['to']
     mesage = Messages.objects.get(id=pk)
     if request.user in mesage.like.all():
         mesage.like.remove(request.user)
     else:
         mesage.like.add(request.user)
-    return redirect('chat',pk=to)
+        print(len(mesage.like.all()),1)
+    return HttpResponse(f'{len(mesage.like.all())}')

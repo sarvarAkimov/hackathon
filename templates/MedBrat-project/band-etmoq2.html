@@ -25,11 +25,11 @@
                 <!-- menu-text -->
                 <div class="menu-text">
                     <ul>
-                        <li><a href="index.html">Asosiy</a></li>
-                        <li><a href="chat.html">Shuxbatlashish</a></li>
-                        <li><a href="band-etmoq1.html">Bant-etish</a></li>
-                        <li><a href="sreach.html">Dorilar</a></li>
-                        <li><a href="post.html">Maqolalar</a></li>
+                        <li><a href="{% url 'all_maqola' %}">Asosiy</a></li>
+                        <li><a href="{% url 'chat'  pk=3 %}">Shuxbatlashish</a></li>
+                        <li><a href="{% url 'time' %}">Bant-etish</a></li>
+                        <li><a href="{% url 'dorilar_url' %}">Dorilar</a></li>
+                        <li><a href="{% url 'maqolalar_view' %}">Maqolalar</a></li>
                     </ul>
                 </div>
                 <!-- login -->
@@ -75,7 +75,7 @@
                     <h3 class="label">Shifokorni talang</h3>
                     <select name="select3">
                         {% for i in hamshira %}
-                            <option value="{{ i.id }}">{{ i.name }}</option>
+                            <option value="{{ i.id }}">{{ i.user.full_name }}</option>
                         {% endfor %}
                     </select>
                     <a href="#">

@@ -18,7 +18,7 @@
                 <!-- logo -->
                 <div class="logo">
                     <div class="logo-img">
-                        <img src="./img/img.png" alt="">
+                        <img src="{% static 'img/img.png' %}" alt="">
                     </div>
                     <h2>Med<span>Brat</span></h2>
                 </div>
@@ -26,21 +26,41 @@
                 <div class="menu-text">
                     <ul>
                         <li><a href="">Asosiy</a></li>
-                        <li><a href="{% url 'chatting' %}">Shuxbatlashish</a></li>
+                        <li><a href="{% url 'chat'  pk=3 %}">Shuxbatlashish</a></li>
                         <li><a href="{% url 'time' %}">Bant-etish</a></li>
                         <li><a href="{% url 'dorilar_url' %}">Dorilar</a></li>
                         <li><a href="{% url 'maqolalar_view' %}">Maqolalar</a></li>
                     </ul>
                 </div>
                 <!-- login -->
+
                 <div class="login">
                     <form action="{% url 'signup' %}">
                         <button type="submit">
-                            Kirish
+                            Sign in
                         </button>
                     </form>
 
                 </div>
+                {% if User.is_authenticated %}
+                <div class="login">
+                    <form action="{% url 'singin' %}">
+                        <button type="submit">
+                            Login
+                        </button>
+                    </form>
+
+                </div>
+                {% else %}
+                <div class="login">
+                    <form action="{% url 'singin' %}">
+                        <button type="submit">
+                            Logout
+                        </button>
+                    </form>
+
+                </div>
+                {% endif %}
             </menu>
             <!-- extra-menu -->
             <div class="extra-menu">
@@ -63,9 +83,9 @@
                 <div class="head-left-s">
                     <h1>O`zbekistondagi barcha Dori darmonlar Ro`yxati</h1>
                     <p>Lorem assumenda culpa veritatis eos animi in iure consequatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis illum provident ab corporis eveniet sunt similique dolorum dolore, ipsa reprehenderit.</p>
-                    <form action="GET">
-                        <button type="submit">Ko`rish</button>
-                    </form>  
+                    <div class="form">
+                        <a href="{% url 'dorilar_url' %}"><button type="submit">Ko'rish</button></a>
+                    </div>
                 </div>
                 <!-- head-right-s -->
                 <div class="head-right-s">
@@ -194,11 +214,11 @@
                     <h4>180 dan Ortiq shifohonalar</h4>
                     <h1>O`zbekistondagi barcha shifohonalardan <br> online navbat olish</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint sunt vel incidunt, libero cum doloremque earum facilis corrupti impedit accusantium soluta deserunt, consequatur corporis odio. Aperiam reiciendis ipsum deleniti iure.</p>
-                    <form action="GET">
-                        <button type="submit">
+                    <div class="form1">
+                        <a href="{% url 'time' %}"><button type="submit">
                             Navbat olish
-                        </button>
-                    </form>
+                        </button></a>
+                    </div>
                 </div>
                 <!-- navbat-right-s -->
                 <div class="navbat-right-s">

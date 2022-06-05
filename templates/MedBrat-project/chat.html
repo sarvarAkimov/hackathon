@@ -1,11 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/chat.css">
+    <link rel="stylesheet" href="{% static 'styles/chat.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <script src="https://unpkg.com/htmx.org@1.1.0"></script>
     <title>Home-Page</title>
 </head>
 <body>
@@ -18,17 +20,18 @@
                 <!-- logo -->
                 <div class="logo">
                     <div class="logo-img">
-                        <img src="img/brand.png" alt="">
+                        <img src="{% static 'img/brand.png' %}" alt="">
                     </div>
                     <h2>Med<span>Brat</span></h2>
                 </div>
                 <!-- menu-text -->
                 <div class="menu-text">
                     <ul>
-                        <li><a href="index.html">Asosiy</a></li>
-                        <li><a href="band-etmoq1.html">Bant-etish</a></li>
-                        <li><a href="sreach.html">Dorilar</a></li>
-                        <li><a href="post.html">Maqolalar</a></li>
+                        <li><a href="{% url 'all_maqola' %}">Asosiy</a></li>
+                        <li><a href="{% url 'chat'  pk=3 %}">Shuxbatlashish</a></li>
+                        <li><a href="{% url 'time' %}">Bant-etish</a></li>
+                        <li><a href="{% url 'dorilar_url' %}">Dorilar</a></li>
+                        <li><a href="{% url 'maqolalar_view' %}">Maqolalar</a></li>
                     </ul>
                 </div>
                 <!-- login -->
@@ -42,273 +45,96 @@
         </div>
         <div class="chat_section_kh">
             <div class="chat_user_kh">
-                <div class="chat_user_kh_search">
-                   
-                    <input type="text" placeholder="Search">
-                    
+
+    <div class="chat_user_kh_search">
+
+        <input type="text" placeholder="Search">
+
+    </div>
+    {% for i in chats %}
+
+        <a style="text-decoration:none;"  href="{% url 'chat' pk=i.id %}"><div class="user_chat_kh_person">
+            <div class="user_pic">
+                <img src="{{ i.to_user.1.user.photo.url }}" alt="">
+            </div>
+            <div class="user_info">
+                <div class="username">
+                    {{ i.to_users.all.0.kasb }} <span>{{ i.messages.all.0.date }}</span>
                 </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
-                <div class="user_chat_kh_person">
-                    <div class="user_pic">
-                        <img src="img/images.jpg" alt="">
-                    </div>
-                    <div class="user_info">
-                        <div class="username">
-                            #Khusanov <span>Today 9:43</span>
-                        </div>
-                        <p>
-                            Lorem, ipsum dolor sit amet
-                            ipsum dolor sit amet consectetur
-                             ipsum dolor sit amet  adipisicing.
-                        </p>
-                    </div>
-                </div>
+                <p>
+                    {{ i.savol }}
+                </p>
+            </div>
+        </div></a>
+    {% endfor %}
+
             </div>
             <div class="chat_message_kh">
                 <div class="message_user_info">
                     <div class="message_user_info_pic">
                         <div class="img">
-                            <img src="img/images.jpg" alt="">
+                            <img src="{% static 'img/images.jpg' %}" alt="">
                             
                         </div>
                         <h1>
-                            #Khusanov
+                            {{ chat.to_users.all.0.kasb }}
                         </h1>
                     </div>
                     <div class="message_user_info_text">
-                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, amet.</p>
+                       <p>{{ chat.savol }}</p>
                     </div>
                 </div>
                 <div class="chat_section">
-                    <div class="message_left">
+                {% for i in chat.messages.all %}
+                    {% if i.from_user == user %}
+                        <div class="message_right" style="padding-left:20px ; height:auto;">
+                            <div class="text" style="margin-bottom:10px;">
+                                {{ i.text }}
 
-                    </div>
-                    <div class="message_right">
+                            </div>
+                            <div class="info">
 
-                    </div>
-                    <div class="message_left">
+                                <span>{{ i.date }}</span>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="message_left" style="padding-left:20px ; height:auto;">
+                        <div class="text">
+                            {{ i.text }}
+                        </div>
+                        <div class="info">
+                            <input type="hidden" name="to" value="{{ chat.id }}">
+                            <i><span class="like" style="margin-top:20px;">
+                                    {{ i.like.count }}
+                            </span>
+                                <svg hx-post="{% url 'add_like' pk=i.id %}" hx-trigger="click" hx-target=".like" hx-swap="outerHTML" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                               </svg>
 
-                    </div>
-                    <div class="message_right">
 
+                            </i>
+                            <span>{{ i.date }}</span>
+                        </div>
                     </div>
-                    <div class="message_left">
-
-                    </div>
-                    <div class="message_right">
-
-                    </div>
-                    <div class="message_left">
-
-                    </div>
-                    <div class="message_right">
-
-                    </div>
-                    <div class="message_left">
-
-                    </div>
-                    <div class="message_right">
-
-                    </div>
-                    <div class="message_left">
-
-                    </div>
-                    <div class="message_right">
-
-                    </div>
-                    <div class="message_left">
-
-                    </div>
-                    <div class="message_right">
-
-                    </div>
+                    {% endif %}
+                {% endfor %}
                     
                 </div>
 
-                <div class="chat_typing">
-                    <input type="text" placeholder="Typing...">
-                </div>  
+                <form class="chat_typing" action="{% url 'add_chat' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="text" placeholder="Typing...">
+                    <input type="hidden" value="{{ chat.id }}" name="to">
+                    <button type="submit">SEND</button>
+
+                </form>
             </div>
         </div>
     </div>
 </body>
+    <script>
+      document.body.addEventListener('htmx:configRequest', (event) => {
+        event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+      })
+    </script>
 </html>
